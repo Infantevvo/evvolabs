@@ -1,0 +1,141 @@
+body {
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  color: #646464;
+  padding: 0px;
+  margin: 0px;
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+
+.color-white{
+  color: #fff !important;
+}
+
+
+.mainWrapper{
+  background: url('https://www.evvolabs.com/img/banner/home-banner.jpg') no-repeat;
+  background-size: cover;
+  background-position:center top;
+  min-height: 100vh;
+}
+
+.formWrapCenter{
+  /*display: flex;
+  align-items: center;
+  justify-content: center;*/
+  padding: 40px 20px;
+}
+
+.formWrap{
+  background: #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+  padding: 40px 70px;
+  max-width: 596px;
+  flex: 0 0 595px;
+  margin: 0px auto;
+}
+
+.formWrap .siteLogo {
+  max-width: 280px;
+  margin: 0px auto;
+}
+
+.formContent{
+  font-size: 18px;
+  color: #000000;
+  line-height: 22px;
+  text-align: center;
+  margin: 18px auto 24px;
+  max-width: 340px;
+}
+
+.formWrap .form-group {
+  margin-bottom: 14px;
+}
+
+.formWrap .form-group input{
+  height: 52px;
+  background: #fff;
+  border: 1px solid #D0D0D0;
+  color: #222222;
+  box-shadow:inset 0 3px 6px rgba(0,0,0,0.16);
+  font-size: 17px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+
+.submitBtnCenter{
+  text-align: center;
+  margin: 30px 0 0 0;
+}
+
+.submitBtnCenter .submitBtn{
+  background: #F05A2A;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 12px 36px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.submitBtnCenter .submitBtn:hover{
+  background: #FF5019;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 991px) {
+
+  .submitBtnCenter .submitBtn{
+    font-size: 16px;
+    padding: 12px 28px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .formWrapCenter{
+    padding: 20px 20px;
+  }  
+
+  .formWrap .siteLogo {
+    max-width: 220px;
+    margin: 0px auto;
+  }
+
+  .formContent{
+    font-size: 16px;
+  }
+
+  .formWrap{
+    padding: 20px 24px;
+  }
+
+  .formWrap .form-group input{
+    font-size: 15px;
+  padding: 0 16px;
+  }
+
+  .submitBtnCenter .submitBtn {
+    font-size: 15px;
+    padding: 12px 20px;
+    width: 100%;
+  }
+}

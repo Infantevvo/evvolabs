@@ -1,0 +1,80 @@
+<!doctype html>
+<html class="no-js" lang>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Discover Your Vulnerabilities : Free Cyber Risks Diagnistic Uncovered  </title>
+	<meta name="description" content>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Favicon -->
+	
+
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+	<div class="mainWrapper">
+		<div class="formWrapCenter">
+			<div class="formWrap">
+				<div class="siteLogo">
+					<img src="https://www.evvolabs.com/img/logo.png" alt="evvolabs" />
+				</div>
+				<div class="formContent">
+					Kindly fill up the below form to watch our Free Cyber Risks Diagnistic Uncovered Event Recording 
+				</div>
+				<form class="row dyv_lead_form" name="dyv_lead_form" data-netlify="true" method="post" id="dyv_lead_form" novalidate="novalidate">
+					
+					<div class="form-group">
+						<input type="text" class="form-control" id="name" name="name" value="" placeholder="Enter your name">
+					</div>
+					<div class="form-group">
+						<input type="email" class="form-control" id="email" name="email" value="" placeholder="Enter your Email ID">
+					</div>
+					<div class="form-group">
+						<input type="tel" class="form-control" id="phone" name="phone" value="" placeholder="Enter your phone number">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="company" value="" placeholder="Enter your company name">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="role" name="role" value="" placeholder="Enter your job title">
+					</div>
+					<div class="submitBtnCenter">
+						<button class="submitBtn" value="submit" type="submit">Submit to Watch the Recording</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		const handleSubmit = (event) => {
+		  event.preventDefault();
+		
+		  const myForm = event.target;
+		  const formData = new FormData(myForm);
+		  
+		  fetch("/", {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			body: new URLSearchParams(formData).toString(),
+		  })
+			.then(() => {console.log("Form successfully submitted"); window.location.href = 'https://drive.google.com/file/d/1DkCU9Y19PaXMLgmonpgdeDh3MOBDtL95/view?usp=sharing';})
+			.catch((error) => alert(error));
+		};
+		
+		document
+		  .querySelector("form")
+		  .addEventListener("submit", handleSubmit);
+	  </script>
+
+</body>
+
+
+</html>

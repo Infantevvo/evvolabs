@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icon/icomoon.eot?7czc9a');
+  src:  url('../fonts/icon/icomoon.eot?7czc9a#iefix') format('embedded-opentype'),
+    url('../fonts/icon/icomoon.ttf?7czc9a') format('truetype'),
+    url('../fonts/icon/icomoon.woff?7czc9a') format('woff'),
+    url('../fonts/icon/icomoon.svg?7czc9a#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrowRight:before {
+  content: "\e90b";
+}
+.icon-user-linkdine:before {
+  content: "\e902";
+}
+.icon-arrowDown:before {
+  content: "\e900";
+}
+.icon-arrowUp:before {
+  content: "\e901";
+}
+.icon-facecBook:before {
+  content: "\e903";
+}
+.icon-footer-fb:before {
+  content: "\e904";
+}
+.icon-footer-Insta:before {
+  content: "\e905";
+}
+.icon-footer-linkdin:before {
+  content: "\e906";
+}
+.icon-footer-twitter:before {
+  content: "\e907";
+}
+.icon-insta:before {
+  content: "\e908";
+}
+.icon-twitter:before {
+  content: "\e909";
+}
+.icon-air:before {
+  content: "\e90a";
+}

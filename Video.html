@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+		<div id="video-HJiwnSCEj"></div>
+<script src="https://v2.evvochannel.tv/player/jwplayer/jwplayer.js"></script>
+<script src="https://v2.evvochannel.tv/js/piwik.js" type="text/javascript"></script>
+
+<script src="https://v2.evvochannel.tv/bower_components/clientjs/dist/client.min.js"></script>
+<script src="https://v2.evvochannel.tv/socket.io/socket.io.js"></script>
+<script>
+
+		
+	var width = "640";
+	var height = "360";
+	
+
+	if(/Mobi/i.test(navigator.userAgent)) {
+		width = "100%";
+	        height = "auto";
+	}
+ 
+	jwplayer.key="yZQCaeGpajGSFqDgOGIs2hEY5ugIiTnmdzTJ57lVyao=" 
+	var playerInstance = jwplayer("video-HJiwnSCEj");
+	playerInstance.setup({
+		width:  width,
+		aspectratio : "16:9",
+		playbackRateControls: [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75],
+		playlist: [{
+	        image: "https://evvomedia.pc.cdn.bitgravity.com/secure/suevvo/suevvo_1667288162574_SOCLiveStreaming_poster_1.png?e=0&h=56a523f8a703c84cb53369e25a862f8f",
+	        sources: [
+		        		        {
+		        	file: "https://evvomedia.pc-s.cdn.bitgravity.com/cdn/_definst_/evvomedia/secure/suevvo/suevvo_1667288162574_SOCLiveStreaming_854x480_.mp4/playlist.m3u8?e=0&h=8932e9735e65d7a139c62f6835af45aa",
+		        	provider: "http",
+		        },
+		        		        		        {
+		        	file: "https://evvomedia.pc.cdn.bitgravity.com/secure/suevvo/suevvo_1667288162574_SOCLiveStreaming_854x480_.mp4?e=0&h=a14cb4150ee039d69125aefae3b442f0",
+		        	provider: "http",
+		        },
+		        	        ],
+	        	
+		tracks : [
+	        					{
+			   file : "https://evvomedia.pc.cdn.bitgravity.com/secure/suevvo/suevvo_1667288162574_SOCLiveStreaming_.vtt?e=0&h=225e6bef59fec100b62d0a407357b27d",
+			   kind : "thumbnails"
+			},
+				]
+	    }],
+	     skin: {
+  			name: "seven"
+  		}
+	});
+    
+
+	var client_info = {}
+	var client = new ClientJS()
+	client_info.browser_data = client.getBrowserData()
+	client_info.timezone = client.getTimeZone()
+	client_info.agent = client.getUserAgent()
+	client_info.fingerprint = client.getFingerprint()
+
+  	var socket = io("https://analytics.v2.evvochannel.tv")
+
+  	var timer
+
+  	playerInstance.on("ready", function() {
+
+		if(height != "auto"){
+			 jwplayer().resize(width, height);	
+		}
+  		socket.emit("user", { video_id: 1019, customer: "suevvo", client_info: client_info, video_length: playerInstance.getDuration() })
+
+  		playerInstance.on("play", function() {
+	  		play_percent = 0;
+	  		timer = setInterval(function() {
+	  			play_percent = (playerInstance.getPosition()/playerInstance.getDuration())*100
+	  			socket.emit("play_percent", play_percent)
+	  		}, 1000)
+  		})
+
+  		playerInstance.on("pause", function() {
+  			clearInterval(timer)
+  		})
+
+  		playerInstance.on("complete", function() {
+  			socket.emit("play_percent", 100)
+  		})
+  	})
+
+</script>	
+</body>
+</html>
