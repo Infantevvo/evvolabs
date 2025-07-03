@@ -19,3 +19,5 @@ Content-Security-Policy = "default-src *; style-src 'self' 'unsafe-inline'; font
     Feature-Policy = "vibrate none; usermedia *; sync-xhr self"
     # Expect CT 
     Expect-CT = "enforce; max-age=43200; report-uri='https://www.evvolabs.com/report'"
+[build.environment]
+  NODE_VERSION = "18"
